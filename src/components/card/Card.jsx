@@ -1,13 +1,15 @@
 import "./index.scss";
 
 const Card = ({ data }) => {
-  const entries = Object.entries(data);
-  // console.log(entries);
-
-  const filteredEntries = entries.filter(
-    ([key, value]) => key.includes("strIngredient") && value !== null
-  );
-  // console.log(filteredEntries);
+  const getIngredients = () => {
+    const entries = Object.entries(data);
+    // console.log(entries);
+    const filteredEntries = entries.filter(
+      ([key, value]) => key.includes("strIngredient") && value !== null
+    );
+    // console.log(filteredEntries);
+    return filteredEntries;
+  };
 
   return (
     <div className="Card">
@@ -19,7 +21,7 @@ const Card = ({ data }) => {
       <div className="Card__text">
         <h3>{data.strDrink}</h3>
         <ul>
-          {filteredEntries.map((entry, index) => (
+          {getIngredients().map((entry, index) => (
             <li key={index}>{entry[1]}</li>
           ))}
         </ul>
