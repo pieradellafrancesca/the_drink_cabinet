@@ -1,16 +1,7 @@
+import { getIngredients } from "../../utils/func";
 import "./index.scss";
 
 const Card = ({ data }) => {
-  const getIngredients = () => {
-    const entries = Object.entries(data);
-    // console.log(entries);
-    const filteredEntries = entries.filter(
-      ([key, value]) => key.includes("strIngredient") && value !== null
-    );
-    // console.log(filteredEntries);
-    return filteredEntries;
-  };
-
   return (
     <div className="Card">
       <img
@@ -21,8 +12,8 @@ const Card = ({ data }) => {
       <div className="Card__text">
         <h3>{data.strDrink}</h3>
         <ul>
-          {getIngredients().map((entry, index) => (
-            <li key={index}>{entry[1]}</li>
+          {getIngredients(data, "strIngredient").map((ingredient) => (
+            <li key={ingredient[0]}>{ingredient[1]}</li>
           ))}
         </ul>
       </div>

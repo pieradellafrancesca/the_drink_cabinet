@@ -1,18 +1,20 @@
 .Navbar {
   padding: 20px 40px;
   position: absolute;
+  top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
   display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
   color: white;
   z-index: 1;
 
   ul {
-    width: 100%;
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -28,24 +30,8 @@
   }
 
   .Navbar__logo {
-    // padding-right: 100px;
     width: 100px;
     height: 100px;
     color: white;
-  }
-
-  .Navbar__btn {
-    width: 150px;
-    height: 40px;
-    border: none;
-    background-color: rgb(83, 83, 83);
-    color: white;
-    cursor: pointer;
-    transition: all 0.35s;
-
-    &:hover {
-      background-color: lightgray;
-      color: black;
-    }
   }
 }
