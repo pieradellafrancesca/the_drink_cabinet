@@ -1,0 +1,39 @@
+.Navbar {
+  display: flex;
+
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+
+    li {
+      cursor: pointer;
+
+      &:hover {
+        border-bottom: 1px solid black;
+      }
+    }
+  }
+
+  .Navbar__logo {
+    margin-right: 100px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .Navbar__btn {
+    width: 150px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.35s;
+
+    &:hover {
+      background-color: lightgray;
+    }
+  }
+}

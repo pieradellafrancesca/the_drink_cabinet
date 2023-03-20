@@ -1,0 +1,35 @@
+.Hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 540px;
+
+  .Hero__text {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    color: white;
+    z-index: 1;
+  }
+
+  img {
+    width: 100vw;
+    height: 540px;
+    object-fit: cover;
+  }
+
+  .Hero__list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+
+    li {
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        font-weight: 700;
+      }
+    }
+  }
+}
