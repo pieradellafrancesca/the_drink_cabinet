@@ -1,20 +1,17 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
 .Navbar {
+  @include flex-container(row, flex-start, center, 40px, wrap);
   padding: 20px 40px;
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  color: white;
+  color: $base-color;
   z-index: 1;
 
   ul {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    flex-wrap: wrap;
+    @include flex-container(row, flex-start, center, 30px, wrap);
     margin: 0;
     padding: 0;
     list-style: none;
@@ -24,7 +21,7 @@
       cursor: pointer;
 
       &:hover {
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid $base-color;
       }
     }
   }
@@ -32,6 +29,6 @@
   .Navbar__logo {
     width: 100px;
     height: 100px;
-    color: white;
+    color: $base-color;
   }
 }

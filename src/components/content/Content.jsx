@@ -4,7 +4,7 @@ import { filteredList } from "../../utils/func";
 import Card from "../card";
 import "./index.scss";
 
-const Content = ({ endpoint, category }) => {
+const Content = ({ endpoint, category, setModalContext }) => {
   const [cocktailList, setCocktailList] = useState([]);
 
   useEffect(() => {
@@ -14,7 +14,11 @@ const Content = ({ endpoint, category }) => {
   return (
     <div className="Content">
       {filteredList(cocktailList, "strCategory", category).map((cocktail) => (
-        <Card data={cocktail} key={cocktail.idDrink} />
+        <Card
+          data={cocktail}
+          key={cocktail.idDrink}
+          setModalContext={setModalContext}
+        />
       ))}
     </div>
   );

@@ -22,6 +22,7 @@ const Hero = ({ endpoint, setCategory }) => {
       </div>
       <img
         src="https://images.pexels.com/photos/3566120/pexels-photo-3566120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        // src="https://images.pexels.com/photos/4295/black-and-white-alcohol-bar-drinks.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         alt="hero image"
       />
       <ul className="Hero__list">
