@@ -15,7 +15,7 @@ export const getRecipe = (obj, string1, string2) => {
   const getIngredient = getInfo(obj, string1);
   const getMeasure = getInfo(obj, string2);
 
-  const recipe = getIngredient.map((x, i) => [x, getMeasure[i]]);
+  const recipe = getIngredient.map((x, i) => [x, getMeasure[i]]); // zip arrays
 
   return recipe;
 };

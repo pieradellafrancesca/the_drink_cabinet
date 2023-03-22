@@ -21,10 +21,10 @@ function App() {
         />
       ) : (
         <>
-          <Navbar />
+          <Navbar endpoint="list.php?c=list" setCategory={setCategory} />
           <Hero endpoint="list.php?c=list" setCategory={setCategory} />
           <Content
-            endpoint="search.php?f=m"
+            endpoint="search.php?f=p"
             category={category}
             setModalContext={setModalContext}
           />

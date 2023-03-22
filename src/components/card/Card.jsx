@@ -1,5 +1,5 @@
 import { getInfo } from "../../utils/func";
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const Card = ({ data, setModalContext }) => {
   const onHandleClick = () => {
@@ -7,13 +7,13 @@ const Card = ({ data, setModalContext }) => {
   };
 
   return (
-    <div className="Card" onClick={onHandleClick}>
+    <div className={styles.Card} onClick={onHandleClick}>
       <img
         src={data.strDrinkThumb}
         alt={data.strDrink}
-        className="Card__image"
+        className={styles.image}
       />
-      <div className="Card__text">
+      <div className={styles.text}>
         <h3>{data.strDrink}</h3>
         <ul>
           {getInfo(data, "strIngredient").map((ingredient) => (

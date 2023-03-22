@@ -1,5 +1,5 @@
 import { getRecipe } from "../../utils/func";
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const ModalItem = ({ data, setModalContext }) => {
   const onHandleClose = () => {
@@ -10,16 +10,16 @@ const ModalItem = ({ data, setModalContext }) => {
   };
 
   return (
-    <div className="ModalItem">
-      <div className="ModalItem__image">
+    <div className={styles.ModalItem}>
+      <div className={styles.image}>
         <img src={data.strDrinkThumb} alt="" />
-        <div className="ModalItem__image--carousel">
+        <div className={styles.carousel}>
           <button>Previous</button>
           <button>Next</button>
         </div>
       </div>
-      <div className="ModalItem__text">
-        <p className="ModalItem__text--iba">{data.strIBA}</p>
+      <div className={styles.text}>
+        <p className={styles.iba}>{data.strIBA}</p>
         <h1>{data.strDrink}</h1>
         <ul>
           <h3>Ingredients:</h3>
@@ -42,7 +42,7 @@ const ModalItem = ({ data, setModalContext }) => {
           <li>{data.strGlass}</li>
         </ul>
       </div>
-      <button className="ModalItem__close" onClick={onHandleClose}>
+      <button className={styles.close} onClick={onHandleClose}>
         X
       </button>
     </div>

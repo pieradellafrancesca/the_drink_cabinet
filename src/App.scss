@@ -1,5 +1,6 @@
+@import "../src/styles/mixins";
+
 .App {
+  @include flex-container(column);
   position: relative;
-  display: flex;
-  flex-direction: column;
 }

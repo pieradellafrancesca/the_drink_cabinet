@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { GET } from "../../utils/http";
 import { filteredList } from "../../utils/func";
 import Card from "../card";
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const Content = ({ endpoint, category, setModalContext }) => {
   const [cocktailList, setCocktailList] = useState([]);
@@ -12,7 +12,7 @@ const Content = ({ endpoint, category, setModalContext }) => {
   }, []);
 
   return (
-    <div className="Content">
+    <div className={styles.Content}>
       {filteredList(cocktailList, "strCategory", category).map((cocktail) => (
         <Card
           data={cocktail}
