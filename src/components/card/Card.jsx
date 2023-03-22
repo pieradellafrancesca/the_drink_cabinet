@@ -3,7 +3,12 @@ import styles from "./index.module.scss";
 
 const Card = ({ data, setModalContext }) => {
   const onHandleClick = () => {
-    setModalContext((prev) => ({ ...prev, payload: data, isVisible: true }));
+    setModalContext((prev) => ({
+      ...prev,
+      payload: data,
+      isVisible: true,
+      positionList: data.positionList,
+    }));
   };
 
   return (

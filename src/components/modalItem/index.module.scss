@@ -29,12 +29,13 @@
       border: none;
       cursor: pointer;
       transform: translateY(-44px);
-      transition: all ease 0.35s;
+      transition: all ease 0.5s;
 
       &:hover {
         transform: scaleY(1.2) translateY(-40px);
         background-color: $base-color;
         color: $primary-color;
+        box-shadow: inset 0 0 2px 2px $secondary-color;
       }
     }
   }

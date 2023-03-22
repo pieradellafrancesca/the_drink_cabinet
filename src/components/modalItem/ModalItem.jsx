@@ -1,7 +1,7 @@
 import { getRecipe } from "../../utils/func";
 import styles from "./index.module.scss";
 
-const ModalItem = ({ data, setModalContext }) => {
+const ModalItem = ({ data, setModalContext, filteredList }) => {
   const onHandleClose = () => {
     setModalContext((prev) => ({
       ...prev,
@@ -9,21 +9,43 @@ const ModalItem = ({ data, setModalContext }) => {
     }));
   };
 
+  const onHandleNextBtn = () => {
+    setModalContext(
+      (prev) =>
+        prev.positionList < filteredList.length - 1 && {
+          ...prev,
+          payload: filteredList[prev.positionList + 1],
+          positionList: prev.positionList + 1,
+        }
+    );
+  };
+
+  const onHandlePreviousBtn = () => {
+    setModalContext(
+      (prev) =>
+        prev.positionList > 0 && {
+          ...prev,
+          payload: filteredList[prev.positionList - 1],
+          positionList: prev.positionList - 1,
+        }
+    );
+  };
+
   return (
     <div className={styles.ModalItem}>
       <div className={styles.image}>
-        <img src={data.strDrinkThumb} alt="" />
+        <img src={data.payload.strDrinkThumb} alt={data.payload.strDrink} />
         <div className={styles.carousel}>
-          <button>Previous</button>
-          <button>Next</button>
+          <button onClick={onHandlePreviousBtn}>Previous</button>
+          <button onClick={onHandleNextBtn}>Next</button>
         </div>
       </div>
       <div className={styles.text}>
-        <p className={styles.iba}>{data.strIBA}</p>
-        <h1>{data.strDrink}</h1>
+        <p className={styles.iba}>{data.payload.strIBA}</p>
+        <h1>{data.payload.strDrink}</h1>
         <ul>
           <h3>Ingredients:</h3>
-          {getRecipe(data, "strIngredient", "strMeasure").map((line) =>
+          {getRecipe(data.payload, "strIngredient", "strMeasure").map((line) =>
             line[1] ? (
               <li key={line[0][0]}>
                 {line[0][1]} - {line[1][1]}
@@ -35,11 +57,11 @@ const ModalItem = ({ data, setModalContext }) => {
         </ul>
 
         <hr />
-        <p>{data.strInstructions}</p>
+        <p>{data.payload.strInstructions}</p>
         <hr />
         <ul>
           <h3>Glass:</h3>
-          <li>{data.strGlass}</li>
+          <li>{data.payload.strGlass}</li>
         </ul>
       </div>
       <button className={styles.close} onClick={onHandleClose}>
