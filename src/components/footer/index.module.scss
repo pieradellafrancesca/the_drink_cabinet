@@ -1,0 +1,39 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.Footer {
+  @include flex-container(row, center, center, 20px);
+  //   border: 2px solid blue;
+  position: fixed;
+  bottom: 5%;
+  width: 90%;
+  height: 50px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px 6px $primary-color-alpha;
+  background-color: $base-color;
+  opacity: 0.85;
+
+  ul {
+    @include flex-container(row, space-around, center);
+    list-style: none;
+    padding: 0;
+    width: 100%;
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      transition: transform 0.35s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 821px) {
+  .Footer {
+    display: none;
+  }
+}

@@ -1,7 +1,7 @@
 @import "../../styles/mixins";
 
 .Content {
-  @include flex-container(row, center, flex-start, 0, wrap);
-  margin-top: 40px;
-  padding-bottom: 40px;
+  @include flex-container(row, center, flex-start, 100px, wrap);
+  margin-top: 100px;
+  padding: 0 20px 100px 20px;
 }
