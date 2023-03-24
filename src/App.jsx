@@ -27,7 +27,7 @@ function App() {
   });
 
   useEffect(() => {
-    GET("search.php?f=W").then((data) => setCocktailList(() => data.drinks));
+    GET("search.php?f=g").then((data) => setCocktailList(() => data.drinks));
   }, []);
 
   return (
@@ -53,11 +53,7 @@ function App() {
               </p>
             </Popup>
           )}
-          <Navbar
-            endpoint="list.php?c=list"
-            setCategory={setCategory}
-            setReservetionVisibility={setReservetionVisibility}
-          />
+          <Navbar setReservetionVisibility={setReservetionVisibility} />
           <Hero endpoint="list.php?c=list" setCategory={setCategory} />
           <Content
             data={filteredList(cocktailList, "strCategory", category)}

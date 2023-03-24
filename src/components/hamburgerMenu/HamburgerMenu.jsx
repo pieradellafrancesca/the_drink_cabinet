@@ -1,10 +1,13 @@
-import CategoryList from "../categoryList";
 import styles from "./index.module.scss";
 
-const HamburgerMenu = ({ showCategory, endpoint, setCategory }) => {
+const HamburgerMenu = ({ showCategory }) => {
   return (
-    <div className={`${styles.HamburgerMenu} ${showCategory && styles.show}`}>
-      <CategoryList endpoint={endpoint} setCategory={setCategory} />
+    <div className={`${styles.HamburgerMenu} ${!showCategory && styles.show}`}>
+      <ul className={styles.hamburgerMenuList}>
+        <li>home</li>
+        <li>our products</li>
+        <li>about</li>
+      </ul>
     </div>
   );
 };

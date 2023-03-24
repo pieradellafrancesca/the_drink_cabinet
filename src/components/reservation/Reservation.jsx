@@ -43,7 +43,7 @@ const Reservation = ({
     <div className={styles.Reservation}>
       <div className={styles.overlay} onClick={onHandleModalClose}></div>
       <div className={styles.text}>
-        <h3>Reserve your seat</h3>
+        <h3>Reserve your drink</h3>
         <form onSubmit={onHandleSubmit}>
           <label htmlFor="yourName">Your name:</label>
           <input

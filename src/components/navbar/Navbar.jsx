@@ -4,8 +4,8 @@ import appLogo from "../../../src/assets/logoipsum.svg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import styles from "./index.module.scss";
 
-const Navbar = ({ endpoint, setCategory, setReservetionVisibility }) => {
-  const [showCategory, setShowCategory] = useState(true);
+const Navbar = ({ setReservetionVisibility }) => {
+  const [showCategory, setShowCategory] = useState(false);
   const onHandleCategory = () => {
     setShowCategory((prev) => !prev);
   };
@@ -17,21 +17,17 @@ const Navbar = ({ endpoint, setCategory, setReservetionVisibility }) => {
   return (
     <div className={styles.Navbar}>
       <img src={appLogo} className={styles.logo} alt="App logo" />
-      <ul>
+      <ul className={styles.homepageList}>
         <li>home</li>
         <li>our products</li>
         <li>about</li>
       </ul>
       <button onClick={onHandleReservation}>Reserve</button>
       <GiHamburgerMenu
-        className={styles.hamburger}
+        className={styles.hamburgerIcon}
         onClick={onHandleCategory}
       />
-      <HamburgerMenu
-        showCategory={showCategory}
-        endpoint={endpoint}
-        setCategory={setCategory}
-      />
+      <HamburgerMenu showCategory={showCategory} />
     </div>
   );
 };

@@ -3,7 +3,7 @@
 
 .Navbar {
   @include flex-container(row, flex-start, center, 40px, wrap);
-  // width: 100vw;
+
   padding: 20px 40px;
   position: absolute;
   top: 0;
@@ -33,18 +33,18 @@
     height: 100px;
   }
 
-  .hamburger {
+  .hamburgerIcon {
     position: fixed;
-    top: 6%;
+    top: 7%;
     right: 10%;
     color: $base-color;
     width: 30px;
     height: 30px;
     cursor: pointer;
-    transition: all 0.35s;
+    transition: all ease 0.35s;
 
     &:hover {
-      color: $main-color;
+      transform: scale(1.2);
     }
   }
 
@@ -67,25 +67,35 @@
 }
 
 @media screen and (min-width: 821px) {
-  .hamburger {
-    display: none;
+  .Navbar {
+    .hamburgerIcon {
+      display: none;
+    }
   }
 }
 
 @media screen and (max-width: 821px) {
   .Navbar {
+    @include flex-container(row, center, center, 20px);
+    position: fixed;
+    top: 3%;
+    width: 100vw;
+    height: 60px;
+    background-color: $primary-color-alpha;
+
     .logo {
       position: fixed;
       top: 3%;
+      left: 8%;
     }
 
-    ul {
+    .homepageList {
       display: none;
     }
 
     button {
       position: fixed;
-      top: 6%;
+      top: 7%;
       left: calc(50% - 30px);
     }
   }
