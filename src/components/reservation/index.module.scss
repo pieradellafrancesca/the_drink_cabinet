@@ -43,7 +43,7 @@
         border: none;
         background-color: $primary-color;
         color: $base-color;
-        transform: all 0.35s;
+        transform: all $timeFast;
 
         &:hover {
           background-color: $secondary-color;

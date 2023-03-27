@@ -23,7 +23,7 @@
       width: 20px;
       height: 20px;
       cursor: pointer;
-      transition: transform 0.35s;
+      transition: transform $timeFast;
 
       &:hover {
         transform: scale(1.2);

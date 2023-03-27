@@ -1,0 +1,29 @@
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin max-width($width) {
+  max-width: $width;
+  width: 100%;
+  margin: 0 auto;
+}
+
+// px in em
+@function em($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return calc($pixels / $context * 1em);
+}
+
+//linear gradient animation
+@mixin background-gradient($deg, $color1, $color2, $opacity) {
+  background: linear-gradient($deg, $color1, $color2);
+  opacity: $opacity;
+}

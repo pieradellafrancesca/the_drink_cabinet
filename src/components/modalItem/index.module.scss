@@ -29,7 +29,7 @@
       border: none;
       cursor: pointer;
       transform: translateY(-44px);
-      transition: all ease 0.5s;
+      transition: all ease $timeMedium;
 
       &:hover {
         transform: scaleY(1.2) translateY(-40px);

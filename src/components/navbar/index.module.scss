@@ -41,7 +41,7 @@
     width: 30px;
     height: 30px;
     cursor: pointer;
-    transition: all ease 0.35s;
+    transition: all ease $timeFast;
 
     &:hover {
       transform: scale(1.2);
