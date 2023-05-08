@@ -27,7 +27,10 @@ const Navbar = ({ setReservetionVisibility }) => {
         className={styles.hamburgerIcon}
         onClick={onHandleCategory}
       />
-      <HamburgerMenu showCategory={showCategory} />
+      <HamburgerMenu
+        showCategory={showCategory}
+        setReservetionVisibility={setReservetionVisibility}
+      />
     </div>
   );
 };

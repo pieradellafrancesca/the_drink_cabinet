@@ -1,5 +1,3 @@
-@import "../src/styles/mixins";
-
 .App {
   @include flex-container(column, center, center);
   position: relative;

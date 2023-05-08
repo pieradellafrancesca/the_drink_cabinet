@@ -12,7 +12,7 @@ import "./App.scss";
 
 function App() {
   const [cocktailList, setCocktailList] = useState([]);
-  const [category, setCategory] = useState("Ordinary Drink");
+  const [category, setCategory] = useState("Cocktail");
   const [modalContext, setModalContext] = useState({
     isVisible: false,
     payload: {},
@@ -58,6 +58,7 @@ function App() {
           <Content
             data={filteredList(cocktailList, "strCategory", category)}
             setModalContext={setModalContext}
+            setCategory={setCategory}
           />
           <Footer />
           {reservetionVisibility && (

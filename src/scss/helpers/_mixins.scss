@@ -27,3 +27,19 @@
   background: linear-gradient($deg, $color1, $color2);
   opacity: $opacity;
 }
+
+// flex-container
+@mixin flex-container(
+  $direction: row,
+  $justify: auto,
+  $align: auto,
+  $gap: 0,
+  $wrap: nowrap
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+  flex-wrap: $wrap;
+}

@@ -65,7 +65,7 @@ const ModalItem = ({ data, setModalContext, filteredList }) => {
         </ul>
       </div>
       <button className={styles.close} onClick={onHandleClose}>
-        X
+        ✖
       </button>
     </div>
   );

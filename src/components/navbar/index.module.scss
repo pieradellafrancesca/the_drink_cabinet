@@ -1,16 +1,12 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
-
 .Navbar {
   @include flex-container(row, flex-start, center, 40px, wrap);
-
-  padding: 20px 40px;
+  padding: 20px 0;
   position: absolute;
   top: 0;
   left: 0;
   color: $base-color;
+  width: 100%;
   z-index: 1;
-  // border: 2px solid blue;
 
   ul {
     @include flex-container(row, space-around, center, 50px, wrap);
@@ -31,12 +27,13 @@
   .logo {
     width: 100px;
     height: 100px;
+    padding-left: 50px;
   }
 
   .hamburgerIcon {
     position: fixed;
-    top: 7%;
-    right: 10%;
+    top: calc(70px - 15px);
+    right: 12%;
     color: $base-color;
     width: 30px;
     height: 30px;
@@ -54,7 +51,6 @@
     height: 30px;
     padding: 6px 12px;
     border-radius: 10px;
-
     font-weight: bold;
     cursor: pointer;
     transition: all 0.35s;
@@ -66,7 +62,7 @@
   }
 }
 
-@media screen and (min-width: 821px) {
+@include min-tablet {
   .Navbar {
     .hamburgerIcon {
       display: none;
@@ -74,19 +70,20 @@
   }
 }
 
-@media screen and (max-width: 821px) {
+@include mobile {
   .Navbar {
     @include flex-container(row, center, center, 20px);
     position: fixed;
-    top: 3%;
+    top: 0%;
     width: 100vw;
-    height: 60px;
-    background-color: $primary-color-alpha;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.9);
 
     .logo {
       position: fixed;
-      top: 3%;
+      top: calc(70px - 50px);
       left: 8%;
+      padding-left: 0;
     }
 
     .homepageList {
@@ -94,9 +91,10 @@
     }
 
     button {
-      position: fixed;
-      top: 7%;
-      left: calc(50% - 30px);
+      display: none;
+      // position: fixed;
+      // top: 7%;
+      // left: calc(50% - 30px);
     }
   }
 }

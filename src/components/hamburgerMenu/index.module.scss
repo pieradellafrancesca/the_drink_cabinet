@@ -1,17 +1,16 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
-
 .HamburgerMenu {
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 10%;
-  right: 10px;
+  top: 120px;
+  right: 0;
   padding: 10px;
   box-shadow: 0 0 15px 6px $primary-color-alpha;
+  border-radius: 4px;
   width: 150px;
-  color: $secondary-color;
-  background-color: $main-color;
+  color: $white;
+  background-color: transparent;
+  backdrop-filter: blur(10px) invert(40%);
 
   .hamburgerMenuList {
     @include flex-container(column, space-around, center, 50px);
@@ -20,12 +19,12 @@
     list-style: none;
 
     li {
-      color: $secondary-color;
+      color: $white;
       font-weight: bold;
       cursor: pointer;
 
       &:hover {
-        border-bottom: 1px solid $secondary-color;
+        border-bottom: 1px solid $white;
       }
     }
   }
@@ -35,7 +34,7 @@
   display: none;
 }
 
-@media screen and (min-width: 821px) {
+@include min-tablet {
   .HamburgerMenu {
     display: none;
   }

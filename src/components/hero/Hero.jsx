@@ -8,10 +8,9 @@ const HeroWrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 30px;
   position: relative;
   height: 540px;
-  width: 100%;
+  width: 100vw;
 `;
 
 const HeroText = styled.div`
@@ -21,39 +20,53 @@ const HeroText = styled.div`
   color: white;
 `;
 
+const HeroOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 540px;
+  -webkit-box-shadow: inset 0px -50px 50px -14px #000000;
+  -moz-box-shadow: inset 0px -50px 50px -14px #000000;
+  -o-box-shadow: inset 0px -50px 50px -14px #000000;
+  box-shadow: inset 0px -50px 50px -14px #000000;
+`;
+
 const HeroImage = styled.img`
   width: 100%;
   height: 540px;
   object-fit: cover;
 `;
 
-const HeroList = styled.ul`
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin: 20px 0;
-  padding: 0;
-  list-style: none;
+// const HeroList = styled.ul`
+//   display: flex;
+//   justify-content: space-evenly;
+//   align-items: center;
+//   gap: 20px;
+//   margin: 20px 0;
+//   padding: 0;
+//   list-style: none;
+//   width: 90%;
+//   height: 100px;
 
-  @media screen and (max-width: 821px) {
-    display: none;
-  }
+//   @media screen and (max-width: 821px) {
+//     display: none;
+//   }
 
-  & li {
-    padding: 8px 10px;
-    border-bottom: 1px solid #373737;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all ease 0.5s;
+//   & li {
+//     padding: 8px 10px;
+//     border-bottom: 1px solid white;
+//     font-weight: bold;
+//     cursor: pointer;
+//     transition: all ease 0.5s;
 
-    &:hover {
-      background-color: #373737;
-      color: white;
-    }
-  }
-`;
+//     &:hover {
+//       background-color: #373737;
+//       color: #ff1d3b;
+//       border-bottom: 1px solid #ff1d3b;
+//     }
+//   }
+// `;
 
 const Hero = ({ endpoint, setCategory }) => {
   const [categoryList, setCategoryList] = useState([]);
@@ -72,14 +85,15 @@ const Hero = ({ endpoint, setCategory }) => {
         <h1>The Drink Cabinet</h1>
         <h4>Cocktails created from a lifetime of passion.</h4>
       </HeroText>
+      <HeroOverlay></HeroOverlay>
       <HeroImage src="https://images.pexels.com/photos/3566120/pexels-photo-3566120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
-      <HeroList>
+      {/* <HeroList>
         {categoryList.map((category, index) => (
           <li onClick={onHandleClick} key={index}>
             {category.strCategory}
           </li>
         ))}
-      </HeroList>
+      </HeroList> */}
     </HeroWrapper>
   );
 
