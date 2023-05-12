@@ -18,6 +18,7 @@ const HeroText = styled.div`
   top: 240px;
   left: 5%;
   color: white;
+  z-index: 1;
 `;
 
 const HeroOverlay = styled.div`
@@ -26,10 +27,11 @@ const HeroOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 540px;
-  -webkit-box-shadow: inset 0px -50px 50px -14px #000000;
-  -moz-box-shadow: inset 0px -50px 50px -14px #000000;
-  -o-box-shadow: inset 0px -50px 50px -14px #000000;
-  box-shadow: inset 0px -50px 50px -14px #000000;
+  background-color: rgba(0, 0, 0, 0.65);
+  -webkit-box-shadow: inset 0px -50px 30px -10px #000000;
+  -moz-box-shadow: inset 0px -50px 30px -10px #000000;
+  -o-box-shadow: inset 0px -50px 30px -10px #000000;
+  box-shadow: inset 0px -50px 30px -10px #000000;
 `;
 
 const HeroImage = styled.img`
@@ -86,7 +88,7 @@ const Hero = ({ endpoint, setCategory }) => {
         <h4>Cocktails created from a lifetime of passion.</h4>
       </HeroText>
       <HeroOverlay></HeroOverlay>
-      <HeroImage src="https://images.pexels.com/photos/3566120/pexels-photo-3566120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+      <HeroImage src="https://images.unsplash.com/photo-1507324554506-c701c6b592a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
       {/* <HeroList>
         {categoryList.map((category, index) => (
           <li onClick={onHandleClick} key={index}>
